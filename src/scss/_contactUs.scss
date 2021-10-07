@@ -1,0 +1,58 @@
+.contact-us {
+  display: flex;
+
+  &__wrapper {
+    margin: auto;
+    position: relative;
+  }
+
+  &__svg {
+    &_wrapper {
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 240px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 11px;
+  }
+
+  &__logo {
+    width: 114px;
+    height: 60px;
+
+    fill: #ef373e;
+  }
+
+  &__contacts {
+    padding-top: 20px;
+
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__email {
+    display: inline-block;
+    border-bottom: 1px solid #000000;
+  }
+
+  .back-button {
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+  }
+}

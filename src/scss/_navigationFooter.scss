@@ -1,0 +1,120 @@
+.navigation-footer {
+  width: 100%;
+  padding: 15px 0;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.18) 33.98%,
+    rgba(0, 0, 0, 0.0225) 64.79%,
+    rgba(255, 255, 255, 0) 90%
+  );
+
+  &_with-bg {
+    .navigation-footer {
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.18) 33.98%,
+        rgba(0, 0, 0, 0.0225) 64.79%,
+        rgba(255, 255, 255, 0) 90%
+      );
+
+      &__item__link svg {
+        fill: #53575a;
+      }
+
+      &__logo {
+        stroke: #53575a;
+      }
+
+      &__text {
+        color: #53575a;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 87%;
+    margin: auto;
+  }
+
+  &__logo {
+    stroke: #fcfcfc;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_about {
+      width: 17%;
+      min-height: 62px;
+    }
+
+    &_wechat {
+      width: 21%;
+      //   max-width: 65px;
+      min-width: 77px;
+    }
+
+    &_weibo {
+      width: 16%;
+      //   max-width: 65px;
+      min-width: 60px;
+    }
+
+    &_shop {
+      width: 14%;
+      min-width: 51px;
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+
+      svg {
+        fill: #fcfcfc;
+      }
+    }
+  }
+
+  &__text {
+    width: 100%;
+
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: #fcfcfc;
+
+    &_about {
+      margin-top: 13px;
+    }
+
+    &_wechat {
+      margin-top: 5px;
+    }
+
+    &_weibo {
+      margin-top: 8px;
+    }
+
+    &_shop {
+      margin-top: 7px;
+    }
+  }
+}

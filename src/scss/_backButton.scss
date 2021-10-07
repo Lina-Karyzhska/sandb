@@ -1,0 +1,20 @@
+.back-button {
+  padding: 25px 0 30px 15px;
+
+  &__button {
+    display: flex;
+    align-items: center;
+  }
+
+  &__svg {
+    width: 12px;
+    height: 18px;
+    margin-right: 10px;
+
+    stroke: #b3b6b7;
+  }
+
+  &__span {
+    color: #b3b6b7;
+  }
+}

@@ -1,0 +1,25 @@
+@function vw($target, $from: 1440) {
+  $vw-context: ($from * 0.01) * 1px;
+  $vw-value: ($target/$vw-context);
+  @return $vw-value * 1vw;
+}
+
+@mixin adapt($name, $responsive, $min, $max: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    #{$name}: $min;
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      #{$name}: $max;
+    }
+  }
+
+  #{$name}: $responsive;
+}
