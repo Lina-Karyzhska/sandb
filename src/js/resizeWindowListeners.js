@@ -17,9 +17,9 @@ const setVideoSize = (video) => {
 const checkWorningScreen = (video) => {
     if ($(window).width() < 768) {
         setVideoSize(video)
-        $(".warning").removeClass("warning__visible");
+        $(".use-phones").removeClass("use-phones__visible");
     } else {
-        $(".warning").addClass("warning__visible");
+        $(".use-phones").addClass("use-phones__visible");
     }
 }
 

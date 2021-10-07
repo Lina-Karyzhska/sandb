@@ -32,6 +32,10 @@ a {
   color: inherit;
 }
 
+address {
+  font-style: normal;
+}
+
 button {
   background-color: transparent;
   cursor: pointer;
@@ -83,6 +87,33 @@ ul {
   @media (max-width: 425px) {
     width: 100%;
     padding: 0 20px;
+  }
+}
+
+.content {
+  width: 1160px;
+  margin: 0 auto;
+
+  @media (max-width: 1440px) {
+    width: 980px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0 40px;
+  }
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: calc(100vh - 172px);
+  min-height: 310px;
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 223px);
   }
 }
 

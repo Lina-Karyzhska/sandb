@@ -16,15 +16,17 @@
   );
 
   &_with-bg {
-    .navigation-footer {
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.45) 0%,
-        rgba(0, 0, 0, 0.18) 33.98%,
-        rgba(0, 0, 0, 0.0225) 64.79%,
-        rgba(255, 255, 255, 0) 90%
-      );
+    width: 100%;
 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+    background-color: #fcfcfc;
+
+    .navigation-footer {
+      position: static;
       &__item__link svg {
         fill: #53575a;
       }

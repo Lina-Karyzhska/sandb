@@ -1,0 +1,41 @@
+.footer {
+  padding: 20px 0;
+  border-top: 1px solid #000;
+
+  &__languages {
+    display: none;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    height: 27px;
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+      height: 78px;
+      font-size: 12px;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

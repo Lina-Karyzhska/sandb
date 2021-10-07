@@ -6,11 +6,6 @@
     position: relative;
   }
 
-  &__svg {
-    &_wrapper {
-    }
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -40,16 +35,12 @@
     line-height: 27px;
   }
 
-  &__address {
-    font-style: normal;
-  }
-
   &__email {
     display: inline-block;
     border-bottom: 1px solid #000000;
   }
 
-  .back-button {
+  .header-mobile {
     width: 100%;
 
     position: absolute;

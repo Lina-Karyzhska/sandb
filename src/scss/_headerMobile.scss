@@ -1,7 +1,9 @@
-.back-button {
-  padding: 25px 0 30px 15px;
+.header-mobile {
+  padding: 23px 15px 28px 15px;
+  display: flex;
+  justify-content: space-between;
 
-  &__button {
+  &__back-button {
     display: flex;
     align-items: center;
   }
