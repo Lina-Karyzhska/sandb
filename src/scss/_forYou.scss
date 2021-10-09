@@ -20,9 +20,6 @@
     padding-bottom: 70px;
   }
 
-  &__intro-paragraph {
-  }
-
   &__heading {
     padding-bottom: 18px;
     margin-bottom: 58px;
@@ -86,7 +83,7 @@
   }
 
   &__purpose {
-    padding-bottom: 63px;
+    padding-bottom: 33px;
 
     &__paragraph {
       text-align: left;
@@ -96,6 +93,7 @@
   &__curl {
     padding-top: 16px;
     padding-bottom: 40px;
+    margin-top: 82px;
     position: relative;
 
     &__wrapper {
@@ -119,6 +117,10 @@
     .footer__item {
       height: auto;
     }
+  }
+
+  &__navigation-footer {
+    transition: background-color 0.3s linear;
   }
 }
 

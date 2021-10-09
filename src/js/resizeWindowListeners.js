@@ -2,8 +2,6 @@ const setVideoSize = (video) => {
     const windowWidth = $(window).width();
     const windowHeight = $(window).height();
     const k = windowHeight / windowWidth;
-
-    console.log(k > 1.8);
     
     if (k > 1.8) {
         video.css("height", `${windowHeight}px`);
@@ -15,11 +13,13 @@ const setVideoSize = (video) => {
 }
 
 const checkWorningScreen = (video) => {
-    if ($(window).width() < 768) {
-        setVideoSize(video)
+    if ($(window).width() < 740) {
+        setVideoSize(video);
         $(".use-phones").removeClass("use-phones__visible");
+        $(".for-you").css("display", "block");
     } else {
         $(".use-phones").addClass("use-phones__visible");
+        $(".for-you").css("display", "none");
     }
 }
 
@@ -36,8 +36,8 @@ $(function() {
         });
         
         [...video].forEach(el => {
-            $(el).on( "loadedmetadata", function(event){
-                console.log( this.duration);
+            $(el).on( "loadedmetadata", function(event) {
+                console.log(this.duration);
             });
         });
     }

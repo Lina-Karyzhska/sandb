@@ -23,7 +23,11 @@
     left: 0;
     z-index: 2;
 
-    background-color: #fcfcfc;
+    background-color: transparent;
+
+    &_bg {
+      background-color: #fcfcfc;
+    }
 
     .navigation-footer {
       position: static;
@@ -66,13 +70,11 @@
 
     &_wechat {
       width: 21%;
-      //   max-width: 65px;
       min-width: 77px;
     }
 
     &_weibo {
       width: 16%;
-      //   max-width: 65px;
       min-width: 60px;
     }
 

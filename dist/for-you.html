@@ -40,15 +40,17 @@
 
     <div class="header__languages">
       <div class="languages">
-    <a href="#" class="languages__item language-active">EN</a>
-    <a href="#" class="languages__item">DE</a>
-    <a href="#" class="languages__item">ZH</a>
+    <button class="languages__button">漢語</button>
+    <div class="languages__list">
+        <a href="#" class="languages__item">漢語</a>
+        <a href="#" class="languages__item">DE</a>
+    </div>
 </div>
     </div>
   </div>
 </header>
 
-    <main class="content main-content">
+    <main class="content main-content use-phones__wrapper">
         <div class="use-phones__content">
             <h2 class="use-phones__title">
                 Please use your phone to visit our website.
@@ -61,13 +63,6 @@
 
     <footer class="footer">
   <div class="footer__content footer__item content">
-    <div class="footer__languages">
-      <div class="languages">
-    <a href="#" class="languages__item language-active">EN</a>
-    <a href="#" class="languages__item">DE</a>
-    <a href="#" class="languages__item">ZH</a>
-</div>
-    </div>
     <div class="footer__item">
       <address class="footer__adress contact-us__address">Arsenalstraße 14/708, 1100, Wien</address>
     </div>
@@ -87,9 +82,11 @@
     </a>
 
     <div class="languages">
-    <a href="#" class="languages__item language-active">EN</a>
-    <a href="#" class="languages__item">DE</a>
-    <a href="#" class="languages__item">ZH</a>
+    <button class="languages__button">漢語</button>
+    <div class="languages__list">
+        <a href="#" class="languages__item">漢語</a>
+        <a href="#" class="languages__item">DE</a>
+    </div>
 </div>
 </div>
 
@@ -219,8 +216,13 @@
     </div>
 
     <div class="for-you__product">
-      <!-- <img class="for-you__product__img" src="" alt=""> -->
+      <img class="for-you__product__img" src="images/cosmetics.png" alt="cosmetics">
     </div>
+
+    <p class="simple-text centered">
+      That is why we have developed a laconic product line of products that is characterized by quality and high
+      efficiency.
+    </p>
 
     <div class="for-you__curl">
       <div class="for-you__curl__wrapper">
@@ -276,8 +278,9 @@
     </div>
   </div>
 
-  <nav class="navigation-about">
-    <!-- <div class="navigation-about__blur"></div> -->
+  <div class="navigation-about_with-bg">
+    <nav class="navigation-about">
+    <div class="navigation-about__blur" style="background-image: url(./images/blurbg.png);"></div>
     <div class="navigation-about__absolute">
         <div class="navigation-about__logo">
             <svg viewBox="0 0 121 63" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -305,9 +308,11 @@
         </div>
 
         <div class="languages">
-    <a href="#" class="languages__item language-active">EN</a>
-    <a href="#" class="languages__item">DE</a>
-    <a href="#" class="languages__item">ZH</a>
+    <button class="languages__button">漢語</button>
+    <div class="languages__list">
+        <a href="#" class="languages__item">漢語</a>
+        <a href="#" class="languages__item">DE</a>
+    </div>
 </div>
     </div>
 
@@ -320,6 +325,7 @@
         </li>
     </ul>
 </nav>
+  </div>
 </main>
 
 <footer class="footer for-you__footer">
@@ -338,7 +344,7 @@
   </div>
 </footer>
 
-<div class="navigation-footer_with-bg">
+<div class="navigation-footer_with-bg navigation-footer_with-bg_bg for-you__navigation-footer">
   <nav class="navigation-footer">
     <ul class="navigation-footer__list">
         <li class="navigation-footer__item navigation-footer__item_about">

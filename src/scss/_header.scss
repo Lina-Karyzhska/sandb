@@ -2,6 +2,7 @@
   width: 100%;
   padding: 20px 0;
   border-bottom: 1px solid #d0d0d0;
+  overflow: hidden;
 
   &__content {
     display: flex;
@@ -26,8 +27,27 @@
       right: 40px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       display: none;
+    }
+
+    .languages {
+      &__list {
+        opacity: 0;
+        left: 0;
+        transition-property: opacity, left;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+      }
+
+      &__item {
+        margin-left: 10px;
+      }
+
+      &-active {
+        opacity: 1;
+        left: -100px;
+      }
     }
   }
 }

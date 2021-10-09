@@ -4,6 +4,60 @@
   align-items: center;
   overflow: hidden;
   transition: filter 0.2s linear;
+  position: relative;
+
+  &__navigation-about {
+    .navigation-about .languages {
+      &__list,
+      &__button {
+        color: #fcfcfc;
+      }
+
+      &__button-active {
+        color: transparent;
+      }
+    }
+  }
+
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dots-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    z-index: 3;
+
+    li {
+      width: 5px;
+      height: 5px;
+      margin: 4px 0;
+
+      transition-property: width, height;
+      transition-duration: 0.2s;
+      transition-timing-function: linear;
+
+      cursor: pointer;
+      background-color: #fcfcfc;
+      border-radius: 50%;
+    }
+
+    .slick-active {
+      width: 10px;
+      height: 10px;
+    }
+
+    button {
+      display: none;
+    }
+  }
 }
 
 ._blur {

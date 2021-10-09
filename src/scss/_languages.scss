@@ -1,17 +1,29 @@
 .languages {
-  width: 139px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 
-  &__item {
+  position: relative;
+
+  &__item,
+  &__button {
     font-size: 18px;
     line-height: 1.16;
     font-weight: 400;
-    color: #d0d0d0;
   }
-}
 
-.language-active {
-  color: #000;
-  border-bottom: 1px solid #000;
+  &__button {
+    transition: color 0.2s linear;
+  }
+
+  &__list {
+    display: flex;
+    width: 85px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &-active {
+    z-index: 0;
+  }
 }

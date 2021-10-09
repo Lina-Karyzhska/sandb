@@ -2,6 +2,7 @@
   padding: 23px 15px 28px 15px;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 
   &__back-button {
     display: flex;
@@ -18,5 +19,29 @@
 
   &__span {
     color: #b3b6b7;
+  }
+
+  .languages {
+    &__list {
+      opacity: 0;
+      left: 0;
+      transition-property: opacity, left;
+      transition-duration: 0.2s;
+      transition-timing-function: linear;
+    }
+
+    &__button {
+      color: #d0d0d0;
+    }
+
+    &__item {
+      margin-left: 10px;
+      color: #d0d0d0;
+    }
+
+    &-active {
+      opacity: 1;
+      left: -100px;
+    }
   }
 }

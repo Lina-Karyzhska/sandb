@@ -40,15 +40,17 @@
 
     <div class="header__languages">
       <div class="languages">
-    <a href="#" class="languages__item language-active">EN</a>
-    <a href="#" class="languages__item">DE</a>
-    <a href="#" class="languages__item">ZH</a>
+    <button class="languages__button">漢語</button>
+    <div class="languages__list">
+        <a href="#" class="languages__item">漢語</a>
+        <a href="#" class="languages__item">DE</a>
+    </div>
 </div>
     </div>
   </div>
 </header>
 
-    <main class="content main-content">
+    <main class="content main-content use-phones__wrapper">
         <div class="use-phones__content">
             <h2 class="use-phones__title">
                 Please use your phone to visit our website.
@@ -61,13 +63,6 @@
 
     <footer class="footer">
   <div class="footer__content footer__item content">
-    <div class="footer__languages">
-      <div class="languages">
-    <a href="#" class="languages__item language-active">EN</a>
-    <a href="#" class="languages__item">DE</a>
-    <a href="#" class="languages__item">ZH</a>
-</div>
-    </div>
     <div class="footer__item">
       <address class="footer__adress contact-us__address">Arsenalstraße 14/708, 1100, Wien</address>
     </div>
@@ -78,14 +73,24 @@
 </footer>
 </div>
 <main class="main">
+    <div id="vido-slider__dots"></div>
     <section class="video-slider">
     <!-- <embed src="videos/SBSA_Video_Fairytale_ResolutionMax_EN.mov" type="video/quicktime" width="640" height="480"> -->
-    <video id="video" autoplay muted playsinline class="video-slider__item__video" loop>
+    <video autoplay muted playsinline class="video-slider__item__video" loop>
         <source src="videos/SBSA_Video_Austria&Swiss_ResolutionMax_EN.mp4" type="video/mp4" />
     </video>
+
+    <video autoplay muted playsinline class="video-slider__item__video" loop>
+        <source src="videos/SBSA_Video_Bath&Girls_ResolutionWeb_EN.mp4" type="video/mp4" />
+    </video>
+
+    <video autoplay muted playsinline class="video-slider__item__video" loop>
+        <source src="videos//SBSA_Video_Fairytale30sec_ResolutionWeb_EN.mp4" type="video/mp4" />
+    </video>
 </section>
-    <nav class="navigation-about">
-    <!-- <div class="navigation-about__blur"></div> -->
+    <div class="video-slider__navigation-about">
+        <nav class="navigation-about">
+    <div class="navigation-about__blur" style="background-image: url(./images/blurbg.png);"></div>
     <div class="navigation-about__absolute">
         <div class="navigation-about__logo">
             <svg viewBox="0 0 121 63" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,9 +118,11 @@
         </div>
 
         <div class="languages">
-    <a href="#" class="languages__item language-active">EN</a>
-    <a href="#" class="languages__item">DE</a>
-    <a href="#" class="languages__item">ZH</a>
+    <button class="languages__button">漢語</button>
+    <div class="languages__list">
+        <a href="#" class="languages__item">漢語</a>
+        <a href="#" class="languages__item">DE</a>
+    </div>
 </div>
     </div>
 
@@ -128,6 +135,7 @@
         </li>
     </ul>
 </nav>
+    </div>
 </main>
 <nav class="navigation-footer">
     <ul class="navigation-footer__list">
