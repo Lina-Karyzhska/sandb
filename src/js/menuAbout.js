@@ -2,6 +2,7 @@ $(function() {
     $("#about").on("click", () => {
         const about = $(".navigation-about");
         if (about.hasClass("_active")) {
+            $("body").css("overflow", "visible");
             $(".video-slider").removeClass("_blur");
             about.removeClass("navigation-about_opacity")
             const isForYou = $(".navigation-footer_with-bg").hasClass("for-you__navigation-footer");
@@ -15,6 +16,7 @@ $(function() {
                 about.removeClass("_active");
             }, 300)
         } else {
+            $("body").css("overflow", "hidden");
             about.addClass("_active navigation-about_opacity");
             $(".video-slider").addClass("_blur");
             $(".navigation-footer_with-bg").removeClass("navigation-footer_with-bg_bg");

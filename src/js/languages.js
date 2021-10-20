@@ -1,23 +1,33 @@
+const toggleActive = (selector) => {
+    $(`${selector} .languages__button`).toggleClass("languages__button-active");
+        $(`${selector} .languages__list`).toggleClass("languages-active");
+}
+
 $(function() {
     $(".header .languages__button").on("click", () => {
-        $(".header  .languages__button").toggleClass("languages__button-active")
-        $(".header .languages__list").toggleClass("languages-active")
+        toggleActive(".header");
+    })
+
+    $(".main__languages .languages__button").on("click", () => {
+        toggleActive(".main__languages");
     })
 
     $(".header-mobile .languages__button").on("click", () => {
-        $(".header-mobile .languages__button").toggleClass("languages__button-active")
-        $(".header-mobile .languages__list").toggleClass("languages-active")
+        toggleActive(".header-mobile");
     })
+
+    $(".navigation-about .languages__button").on("click", () => {
+        toggleActive(".navigation-about");
+    });
+
+    $(".footer .languages__button").on("click", () => {
+        toggleActive(".footer");
+    });
 
     $("body").on("click", (e) => {
         if (typeof e.target.className !== "string" || !e.target.className.includes("languages__button")) {
              $(".languages__button").removeClass("languages__button-active")
             $(".languages__list").removeClass("languages-active")
         }
-    })
-
-    $(".navigation-about .languages__button").on("click", () => {
-        $(".navigation-about .languages__button").toggleClass("languages__button-active")
-        $(".navigation-about .languages__list").toggleClass("languages-active")
     })
 })

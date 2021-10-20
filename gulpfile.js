@@ -50,6 +50,17 @@ function scripts() {
         .pipe(browserSync.stream());
 };
 
+function scriptsLanguages() {
+    return src([
+        "node_modules/jquery/dist/jquery.js",
+        "src/js/languages.js"
+    ])
+        .pipe(concat("languages.min.js")) 
+        .pipe(uglify())
+        .pipe(dest("dist/js"))
+        .pipe(browserSync.stream());
+};
+
 function imgs() {
     return src("src/images/**/*.png")
         .pipe(imagemin([
@@ -101,6 +112,7 @@ function cleanDist() {
 function watching() {
     watch(["src/*.html", "src/.htaccess"], html);
     watch(["src/js/**/*.js"], scripts);
+    watch(["src/js/languages.js"], scriptsLanguages);
     watch(["src/scss/**/*.scss"], styles);
     watch(["src/fonts/**/*"], fonts);
     watch(["src/videos/**/*"], video);
@@ -112,11 +124,12 @@ exports.styles = styles;
 exports.watching = watching;
 exports.browserSync = sync;
 exports.scripts = scripts;
+exports.scriptsLanguages = scriptsLanguages;
 exports.imgs = imgs;
 exports.svg = svg;
 exports.fonts = fonts;
 exports.video = video;
 exports.cleanDist = cleanDist;
 
-const build = series(cleanDist, parallel(html, styles, imgs, fonts, video, scripts, svg));
+const build = series(cleanDist, parallel(html, styles, imgs, fonts, video, scripts, scriptsLanguages, svg));
 exports.default = parallel(build, sync, watching);

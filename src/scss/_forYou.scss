@@ -24,9 +24,27 @@
     padding-bottom: 18px;
     margin-bottom: 58px;
 
+    position: relative;
+
     color: #000000;
+    font-family: 'MyriadPro Regular', sans-serif;
+    font-weight: 400;
     font-size: 18px;
     line-height: 25px;
+
+    span {
+      font-family: 'MyriadPro Regular', sans-serif;
+      font-weight: 400;
+    }
+
+    &__svg {
+      width: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
   }
 
   &__sentences {
@@ -91,8 +109,10 @@
   }
 
   &__curl {
+    width: 67%;
     padding-top: 16px;
     padding-bottom: 40px;
+    margin: auto;
     margin-top: 82px;
     position: relative;
 
@@ -127,7 +147,7 @@
 .simple-text {
   font-weight: 300;
   font-size: 16px;
-  line-height: 22.4px;
+  line-height: 24px;
   margin: 15px 0;
 }
 

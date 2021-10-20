@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat Medium', sans-serif;
+  font-family: 'MyriadPro Light', sans-serif;
+  font-weight: 300;
 }
 
 html,
@@ -63,6 +64,43 @@ ul {
 
   position: relative;
   overflow: hidden;
+
+  &__languages {
+    position: absolute;
+    right: 16px;
+    top: 19px;
+    z-index: 1;
+
+    .languages {
+      &__button {
+        color: #d0d0d0;
+      }
+
+      &__list {
+        flex-direction: column;
+        align-items: flex-end;
+
+        right: 0;
+        top: 0;
+
+        opacity: 0;
+
+        transition-property: opacity, top;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+      }
+
+      &__item {
+        margin-bottom: 5px;
+        color: #fff;
+      }
+
+      &-active {
+        opacity: 1;
+        top: 25px;
+      }
+    }
+  }
 }
 
 .section {

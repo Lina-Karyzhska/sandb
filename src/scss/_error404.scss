@@ -1,6 +1,6 @@
 .error404 {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
   }
 
   &__404 {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 
     font-size: 190px;
     font-weight: 100;
@@ -23,7 +23,6 @@
     }
 
     @media (max-width: 768px) {
-      margin-bottom: 30px;
       font-size: 95px;
     }
   }
@@ -90,11 +89,64 @@
   }
 
   .languages {
-    color: #d0d0d0;
+    &__button,
+    &__item {
+      color: #fcfcfc;
+    }
   }
 
-  .language-active {
-    color: #fcfcfc;
-    border-bottom: 1px solid #fcfcfc;
+  .header {
+    .languages {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+
+  .footer {
+    .languages {
+      &__list {
+        width: 80px;
+        opacity: 0;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition-property: opacity, top;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+        color: #53575a;
+        justify-content: center;
+      }
+
+      &__item {
+        margin: 0 5px;
+      }
+
+      &-active {
+        opacity: 1;
+        top: 0;
+      }
+
+      &__button-active {
+        color: transparent;
+      }
+
+      @media (max-width: 767px) {
+        display: block;
+      }
+    }
+
+    &__item {
+      height: auto;
+    }
+  }
+
+  .main-content {
+    min-height: 500px;
+
+    @media (max-width: 767px) {
+      height: calc(100vh - 215px);
+      min-height: 300px;
+    }
   }
 }

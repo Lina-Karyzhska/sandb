@@ -7,19 +7,26 @@
   position: relative;
 
   &__navigation-about {
-    .navigation-about .languages {
-      &__list,
-      &__button {
-        color: #fcfcfc;
-      }
+    .navigation-about {
+      background-color: #00000060;
+      backdrop-filter: blur(10px);
 
-      &__button-active {
-        color: transparent;
+      .languages {
+        &__list,
+        &__button {
+          color: #fcfcfc;
+        }
+
+        &__button-active {
+          color: transparent;
+        }
       }
     }
   }
 
   .slick-slide {
+    height: 100vh;
+
     display: flex;
     justify-content: center;
   }

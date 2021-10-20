@@ -1,7 +1,7 @@
-@function vw($target, $from: 1440) {
-  $vw-context: ($from * 0.01) * 1px;
-  $vw-value: ($target/$vw-context);
-  @return $vw-value * 1vw;
+@function vh($target, $from: 667) {
+  $vh-context: ($from * 0.01) * 1px;
+  $vh-value: ($target/$vh-context);
+  @return $vh-value * 1vh;
 }
 
 @mixin adapt($name, $responsive, $min, $max: false) {
