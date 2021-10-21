@@ -3,13 +3,16 @@ const setVideoSize = (video) => {
     const windowHeight = $(window).height();
     const k = windowHeight / windowWidth;
 
-    if (k > 1.8) {
-        video.css("height", `${windowHeight}px`);
-        video.css("width", `auto`)
-    } else {
-        video.css("width", `${windowWidth}px`); 
-        video.css("height", `auto`);
-    }
+    video.css("height", `${windowHeight}px`);
+    video.css("width", `auto`)
+
+    // if (k > 1.8) {
+    //     video.css("height", `${windowHeight}px`);
+    //     video.css("width", `auto`)
+    // } else {
+    //     video.css("width", `${windowWidth}px`); 
+    //     video.css("height", `auto`);
+    // }
 }
 
 const checkWarningScreen = (video) => {

@@ -7,6 +7,11 @@ const changeSlide = (timeout) => {
 }
 
 $(function() {
+    $("#mute").on('click', () => {
+        [...$('.video-slider__item__video')].forEach(el => {
+            el.muted = !el.muted
+        })
+    })
     $('.video-slider').on('init', () => {
         const videos = $('.video-slider__item__video');
         [...videos].forEach((video, index) => {
@@ -38,7 +43,6 @@ $(function() {
     
     $('.video-slider').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
         const videos = $('.video-slider__item__video');
-        console.log(currentSlide, nextSlide, videos[nextSlide + 1].duration);
         videos[currentSlide + 1].pause();
         videos[currentSlide + 1].currentTime = '0';
         videos[nextSlide + 1].play();

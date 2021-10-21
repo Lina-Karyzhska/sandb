@@ -64,6 +64,18 @@ ul {
 
   position: relative;
   overflow: hidden;
+  background-color: #000;
+
+  &__sound {
+    position: absolute;
+    left: 16px;
+    top: 19px;
+    z-index: 1;
+
+    button {
+      color: #d0d0d0;
+    }
+  }
 
   &__languages {
     position: absolute;
