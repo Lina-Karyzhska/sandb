@@ -1,3 +1,6 @@
+const observer = lozad(); 
+
+observer.observe();
 const timeouts = [];
 
 const changeSlide = (timeout) => {
@@ -6,11 +9,49 @@ const changeSlide = (timeout) => {
     }, timeout))
 }
 
+const setVideoSize = (video) => {
+    const windowWidth = $(window).width();
+    const windowHeight = $(window).height();
+    const k = windowHeight / windowWidth;
+
+    video.css("height", `${windowHeight}px`);
+    video.css("width", `auto`)
+
+    // if (k > 1.8) {
+    //     video.css("height", `${windowHeight}px`);
+    //     video.css("width", `auto`)
+    // } else {
+    //     video.css("width", `${windowWidth}px`); 
+    //     video.css("height", `auto`);
+    // }
+}
+
+const checkWarningScreen = (video) => {
+    if ($(window).width() < 740) {
+        setVideoSize(video);
+        $(".use-phones").removeClass("use-phones__visible");
+        $(".for-you").css("display", "block");
+    } else {
+        $(".use-phones").addClass("use-phones__visible");
+        $(".for-you").css("display", "none");
+    }
+}
+
 $(function() {
-    $("#mute").on('click', () => {
+    $("#sound").on('click', () => {
+        let isMuted;
         [...$('.video-slider__item__video')].forEach(el => {
-            el.muted = !el.muted
-        })
+            isMuted = el.muted;
+            el.muted = !el.muted;
+        });
+
+        if (isMuted) {
+            $(".sound__active").addClass("sound_block");
+            $(".sound__muted").removeClass("sound_block");
+        } else {
+            $(".sound__active").removeClass("sound_block");
+            $(".sound__muted").addClass("sound_block");
+        }
     })
     $('.video-slider').on('init', () => {
         const videos = $('.video-slider__item__video');
@@ -24,6 +65,22 @@ $(function() {
                 })
             }
         })
+
+        if(videos) {
+            checkWarningScreen(videos)
+    
+            let timeout;
+            $(window).resize(() => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => checkWarningScreen(videos), 100)
+            });
+            
+            [...videos].forEach(el => {
+                $(el).on( "loadedmetadata", () => {
+                    checkWarningScreen(videos)
+                });
+            });
+        }
     });
 
     $(".video-slider").slick({

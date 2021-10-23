@@ -50,7 +50,7 @@
     justify-content: space-between;
     align-items: center;
 
-    width: 87%;
+    width: 100%;
     margin: auto;
   }
 
@@ -69,12 +69,12 @@
     }
 
     &_wechat {
-      width: 21%;
+      width: 27%;
       min-width: 77px;
     }
 
     &_weibo {
-      width: 16%;
+      width: 25%;
       min-width: 60px;
     }
 

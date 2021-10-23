@@ -40,6 +40,7 @@ function styles() {
 function scripts() {
     return src([
         "node_modules/jquery/dist/jquery.js",
+        "node_modules/lozad/dist/lozad.min.js",
         "node_modules/slick-slider/slick/slick.min.js",
         "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
         "src/js/*.js"

@@ -5,7 +5,11 @@
         @@include('_languages.html')
     </div>
     <div class="main__sound">
-        <button id="mute">Sound</button>
+        <button id="sound">
+            <img class="sound sound__muted sound_block" src="images/soundMuted.png" alt="muted">
+            <img class="sound sound__active" src="images/soundActive.png" alt="active">
+        </button>
+
     </div>
     <div id="vido-slider__dots"></div>
     @@include('_videoSlider.html')

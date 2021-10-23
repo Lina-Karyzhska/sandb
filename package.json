@@ -34,6 +34,7 @@
   "homepage": "https://github.com/Lina-Karyzhska/artists#readme",
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "lozad": "^1.16.0",
     "slick-slider": "^1.8.2"
   }
 }

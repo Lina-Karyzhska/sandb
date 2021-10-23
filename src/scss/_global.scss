@@ -167,7 +167,14 @@ ul {
   }
 }
 
-.plain-text {
+.sound {
+  width: 25px;
+  height: 25px;
+  display: none;
+
+  &_block {
+    display: block;
+  }
 }
 
 .logo {

@@ -90,20 +90,24 @@
 </div>
     </div>
     <div class="main__sound">
-        <button id="mute">Sound</button>
+        <button id="sound">
+            <img class="sound sound__muted sound_block" src="images/soundMuted.png" alt="muted">
+            <img class="sound sound__active" src="images/soundActive.png" alt="active">
+        </button>
+
     </div>
     <div id="vido-slider__dots"></div>
     <section class="video-slider">
     <!-- <embed src="videos/SBSA_Video_Fairytale_ResolutionMax_EN.mov" type="video/quicktime" width="640" height="480"> -->
-    <video autoplay muted playsinline class="video-slider__item__video" loop>
+    <video preload="none" autoplay muted playsinline class="video-slider__item__video lozad" loop>
         <source src="videos/SBSA_Video_Austria&Swiss_ResolutionMax_EN.mp4" type="video/mp4" />
     </video>
 
-    <video autoplay muted playsinline class="video-slider__item__video" loop>
+    <video preload="none" autoplay muted playsinline class="video-slider__item__video lozad" loop>
         <source src="videos/SBSA_Video_Bath&Girls_ResolutionWeb_EN.mp4" type="video/mp4" />
     </video>
 
-    <video autoplay muted playsinline class="video-slider__item__video" loop>
+    <video preload="none" autoplay muted playsinline class="video-slider__item__video lozad" loop>
         <source src="videos//SBSA_Video_Fairytale30sec_ResolutionWeb_EN.mp4" type="video/mp4" />
     </video>
 </section>
