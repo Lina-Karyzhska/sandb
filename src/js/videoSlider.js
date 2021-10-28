@@ -28,7 +28,7 @@ const setVideoSize = (video) => {
 
 const checkWarningScreen = (video) => {
     if ($(window).width() < 740) {
-        setVideoSize(video);
+        if (video) setVideoSize(video);
         $(".use-phones").removeClass("use-phones__visible");
         $(".for-you").css("display", "block");
     } else {
@@ -53,6 +53,13 @@ $(function() {
             $(".sound__muted").addClass("sound_block");
         }
     })
+    
+    let timeout;
+    $(window).resize(() => {
+      clearTimeout(timeout);
+         timeout = setTimeout(() => checkWarningScreen(videos), 100)
+     });
+    
     $('.video-slider').on('init', () => {
         const videos = $('.video-slider__item__video');
         [...videos].forEach((video, index) => {
@@ -68,12 +75,6 @@ $(function() {
 
         if(videos) {
             checkWarningScreen(videos)
-    
-            let timeout;
-            $(window).resize(() => {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => checkWarningScreen(videos), 100)
-            });
             
             [...videos].forEach(el => {
                 $(el).on( "loadedmetadata", () => {
