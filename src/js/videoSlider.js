@@ -14,20 +14,17 @@ const setVideoSize = (video) => {
     const windowHeight = $(window).height();
     const k = windowHeight / windowWidth;
 
-    video.css("height", `${windowHeight}px`);
-    video.css("width", `auto`)
-
-    // if (k > 1.8) {
-    //     video.css("height", `${windowHeight}px`);
-    //     video.css("width", `auto`)
-    // } else {
-    //     video.css("width", `${windowWidth}px`); 
-    //     video.css("height", `auto`);
-    // }
+    if (k > 1.8) {
+        video.css("height", `${windowHeight}px`);
+        video.css("width", `auto`)
+    } else {
+        video.css("width", `${windowWidth}px`); 
+        video.css("height", `auto`);
+    }
 }
 
 const checkWarningScreen = (video) => {
-    if ($(window).width() < 740) {
+    if ($(window).width() < 740 && window.orientation === 0) {
         if (video) setVideoSize(video);
         $(".use-phones").removeClass("use-phones__visible");
         $(".for-you").css("display", "block");
@@ -52,12 +49,18 @@ $(function() {
             $(".sound__active").removeClass("sound_block");
             $(".sound__muted").addClass("sound_block");
         }
-    })
+    });
+
+    $(window).on( "orientationchange", () => {
+        const videos = $('.video-slider__item__video');
+        checkWarningScreen(videos);
+    });
     
     let timeout;
     $(window).resize(() => {
-      clearTimeout(timeout);
-         timeout = setTimeout(() => checkWarningScreen(videos), 100)
+        const videos = $('.video-slider__item__video');
+        clearTimeout(timeout);
+        timeout = setTimeout(() => checkWarningScreen(videos), 100);
      });
     
     $('.video-slider').on('init', () => {
@@ -71,10 +74,10 @@ $(function() {
                     changeSlide(video.duration * 1000);
                 })
             }
-        })
+        });
 
         if(videos) {
-            checkWarningScreen(videos)
+            checkWarningScreen(videos);
             
             [...videos].forEach(el => {
                 $(el).on( "loadedmetadata", () => {
